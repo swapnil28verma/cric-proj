@@ -3,7 +3,11 @@ import { Game } from "../models/game";
 import { BallOutcomeType } from "../enums/ball-outcome-type.enum";
 
 export class StrikerAction implements IAction {
-    successorAction: IAction | undefined;
+    private _successor: IAction | undefined;
+
+    setSuccessor(successor: IAction | undefined): void {
+        this._successor = successor;
+    }
 
     performAction(game: Game, ballOutcomeType: BallOutcomeType): Game {
         switch (ballOutcomeType) {
@@ -11,7 +15,7 @@ export class StrikerAction implements IAction {
                 game = this.updateStrikerBallsFaced(game);
                 break;
         }
-        return this.successorAction ? this.successorAction.performAction(game, ballOutcomeType) : game;
+        return this._successor ? this._successor.performAction(game, ballOutcomeType) : game;
     }
 
     updateStrikerBallsFaced(game: Game) {
