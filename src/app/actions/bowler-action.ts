@@ -3,7 +3,7 @@ import { Game } from "../models/game";
 import { BallOutcomeType } from "../enums/ball-outcome-type.enum";
 
 export class BowlerAction implements IAction {
-    successorAction: IAction | undefined = undefined;
+    successorAction: IAction | undefined;
 
     performAction(game: Game, ballOutcomeType: BallOutcomeType): Game {
         switch (ballOutcomeType) {

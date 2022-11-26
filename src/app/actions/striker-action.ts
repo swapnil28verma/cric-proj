@@ -1,11 +1,9 @@
 import { IAction } from "./action.interface";
 import { Game } from "../models/game";
 import { BallOutcomeType } from "../enums/ball-outcome-type.enum";
-import { BowlerAction } from "./bowler-action";
-
 
 export class StrikerAction implements IAction {
-    successorAction: IAction = new BowlerAction();
+    successorAction: IAction | undefined;
 
     performAction(game: Game, ballOutcomeType: BallOutcomeType): Game {
         switch (ballOutcomeType) {
