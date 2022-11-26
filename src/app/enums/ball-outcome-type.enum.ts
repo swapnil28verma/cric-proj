@@ -1,4 +1,4 @@
-export enum Outcomes {
+export enum BallOutcomeType {
     // Runs
     SINGLE = 'SINGLE',
     DOUBLE = 'DOUBLE',

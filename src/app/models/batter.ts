@@ -1,11 +1,11 @@
 import { Player } from "./player";
 
 export class Batter extends Player {
-    runsScored: number;
-    ballsFaced: number;
+    runsScored: number = 0;
+    ballsFaced: number = 0;
 
-    numFours: number;
-    numSixes: number;
+    numFours: number = 0;
+    numSixes: number = 0;
 
-    strikeRate: number;
+    strikeRate: number = 0;
 }
